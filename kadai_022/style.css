@@ -1,0 +1,97 @@
+body {
+    margin: 0px;
+}
+
+h1 {
+    margin: 0px;
+}
+
+p {
+    margin: 0px;
+    font-size: 20px;
+}
+
+a {
+    font-size: 20px;
+}
+
+header {
+    margin: 0px 0px 20px 0px;
+    text-align: center;
+    background-color:  rgb(244, 79, 79);
+    color: rgb(255, 255, 255);
+}
+
+main {
+    padding: 10px 10px 10px 10px;
+}
+
+#parent {
+    display: flex;    /*displayは初期値がblockだが、flexを指定するとFlexboxのflex-directionプロパティの初期値がrowなので、指定しなくてもアイテムが左から右に配置される*/
+    justify-content: space-around;
+}
+
+.contents {
+    border: solid 3px rgb(238, 204, 204);
+    flex-basis: 25%;
+    padding: 10px 15px 10px 15px;
+    margin: 20px 0px 20px 0px; 
+    text-align: center;
+}
+
+.contents h2 {
+    font-size: 25px;
+    border-bottom: dotted 3px rgb(236, 122, 122);
+}
+
+h2::before {
+    content: "●";
+    color: rgb(239, 111, 139);
+}
+
+/* 疑似要素と疑似クラスの組み合わせかた(どこのタグ内のどのタグの何番目の文字にという順番)についてメモしておく */
+.contents p:nth-of-type(2)::first-letter {
+    color: rgb(97, 206, 249);
+    font-weight: bold;
+}
+
+/*元々の画像の大きさが大きいので親の大きさ関係なくそのままの大きさで表示されていたが、
+    幅の大きさを指定したことで、親の大きさを基準にした幅に画像の幅が修正された。*/
+
+.contents img {
+    margin: 10px 0px 10px 0px;
+    width: 70%;
+}
+
+footer {
+    background-color: rgb(244, 79, 79);
+    text-align: center;
+}
+
+footer a {
+    color: rgb(255, 255, 255);
+}
+
+footer a:hover {
+    color: rgb(245, 178, 168);
+}
+
+footer a:visited {
+    color: rgb(193, 234, 251);
+}
+
+@media screen and (max-width: 768px) {
+    .contents h2 {
+        font-size: 30px;
+    }
+
+    .contents p {
+        font-size: 25px;
+    }
+
+    #parent {
+        display: block;
+    }
+
+}
+
